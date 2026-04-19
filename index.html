@@ -3,146 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAYAT ENGINEERS - HVAC Services in India | Installation, Maintenance, AHU, VRF/VRV</title>
-    <meta name="description" content="HAYAT ENGINEERS provides complete HVAC solutions in India. Installation, Maintenance, AHU Erection, VRF/VRV Systems, Ducting, Copper Piping for Industrial & Commercial projects.">
-    <meta name="keywords" content="HVAC Services in India, AHU Erection Experts, VRF VRV Installation, Industrial HVAC Contractors, HVAC Maintenance, Commercial HVAC Projects">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="HAYAT ENGINEERS - Best HVAC Solutions in India">
-    <meta property="og:description" content="Complete HVAC solutions including installation, maintenance, AHU erection, VRF/VRV systems.">
-    <meta property="og:type" content="website">
+    <title>HAYAT ENGINEERS - Best HVAC Solutions in India | Installation & Maintenance</title>
+    <meta name="description" content="HAYAT ENGINEERS provides complete HVAC solutions including installation, maintenance, AHU erection, VRF/VRV systems, ducting, piping in India. Book appointment now!">
+    <meta name="keywords" content="HVAC Installation in India, AHU Erection Services, VRF HVAC Experts, HVAC Maintenance, Commercial HVAC Projects">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     
     <style>
-        :root {
-            --primary-bg: #0a0a0f;
-            --secondary-bg: #111127;
-            --accent-orange: #ff6b35;
-            --accent-orange-dark: #e55a2b;
-            --text-primary: #ffffff;
-            --text-secondary: #b8bcc8;
-            --success: #10b981;
-            --border-light: rgba(255, 107, 53, 0.1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #ff6b35;
+            --accent-hover: #e55a2b;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+            --success: #00d4aa;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--primary-bg);
+            color: var(--text-light);
+            background: var(--primary-color);
             overflow-x: hidden;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--secondary-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-orange);
-            border-radius: 4px;
         }
 
         /* Navigation */
         .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
             z-index: 1000;
+            padding: 1rem 0;
             transition: all 0.3s ease;
-            border-bottom: 1px solid var(--border-light);
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            padding: 0 2rem;
         }
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-orange), #ff8c60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 700;
+            color: var(--accent-color);
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
-        .nav-link {
-            color: var(--text-primary);
+        .nav-menu a {
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: color 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: var(--accent-orange);
+        .nav-menu a:hover {
+            color: var(--accent-color);
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--accent-orange);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
+        .mobile-menu {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
         }
 
-        .hamburger span {
+        .mobile-menu span {
             width: 25px;
             height: 3px;
-            background: var(--text-primary);
+            background: var(--text-light);
+            margin: 3px 0;
             transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, 
-                rgba(10, 10, 15, 0.9) 0%, 
-                rgba(17, 17, 39, 0.9) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ff6b35" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            height: 100vh;
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a1a2e" width="1200" height="800"/><path fill="%23ff6b35" opacity="0.1" d="M0 400Q300 200 600 400T1200 400V800H0z"/><circle fill="%2316213e" opacity="0.3" cx="200" cy="200" r="100"/><circle fill="%23ff6b35" opacity="0.05" cx="1000" cy="300" r="150"/></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -153,31 +112,31 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-orange));
+            background: linear-gradient(45deg, var(--text-light), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: var(--text-secondary);
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             max-width: 600px;
-            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
         }
 
-        .hero-buttons {
+        .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -185,47 +144,37 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 0.5rem;
+            transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
             color: white;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
         }
 
-        .btn-outline {
+        .btn-secondary {
             background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--accent-orange);
+            color: var(--text-light);
+            border: 2px solid var(--accent-color);
         }
 
-        .btn-outline:hover {
-            background: var(--accent-orange);
-            transform: translateY(-4px);
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
         }
 
         /* Floating Action Buttons */
-        .floating-actions {
-            position: fixed;
-            right: 2rem;
-            bottom: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            z-index: 1000;
-        }
-
         .fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -233,79 +182,49 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
             transition: all 0.3s ease;
         }
 
         .fab-call {
-            background: var(--success);
+            background: #00d4aa;
+            color: white;
+            bottom: 10rem;
         }
 
         .fab-whatsapp {
-            background: #25d366;
+            background: #25D366;
+            color: white;
         }
 
         .fab:hover {
-            transform: scale(1.1) translateY(-3px);
+            transform: scale(1.1);
         }
 
-        /* Container */
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Section */
-        .section {
-            padding: 6rem 0;
-        }
-
         .section-title {
             text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-orange));
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--text-light), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-orange), #ff8c60);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        /* Services */
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -314,43 +233,25 @@
         }
 
         .service-card {
-            background: var(--secondary-bg);
+            background: var(--secondary-color);
             padding: 2.5rem 2rem;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-orange), transparent);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 53, 0.1);
         }
 
         .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px rgba(255, 107, 53, 0.15);
-            border-color: var(--accent-orange);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+            border-color: var(--accent-color);
         }
 
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
-            border-radius: 20px;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -359,19 +260,37 @@
             color: white;
         }
 
-        /* Appointment Form */
-        .appointment-section {
-            background: var(--secondary-bg);
-            border-radius: 25px;
-            padding: 4rem;
-            margin: 3rem 0;
-            border: 1px solid var(--border-light);
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: center;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .stat {
+            padding: 2rem;
+            background: var(--secondary-color);
+            border-radius: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        /* Appointment Form */
+        .appointment-section {
+            background: var(--secondary-color);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 20px;
         }
 
         .form-group {
@@ -380,87 +299,77 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--text-primary);
-            font-size: 0.95rem;
+            color: var(--text-light);
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--text-primary);
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: var(--text-light);
             font-size: 1rem;
-            font-family: inherit;
             transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-secondary);
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-orange);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
         }
 
         /* Contact Info */
-        .contact-grid {
+        .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .contact-card {
+        .contact-item {
             display: flex;
-            gap: 1.5rem;
-            padding: 2rem;
-            background: var(--secondary-bg);
-            border-radius: 20px;
-            border: 1px solid var(--border-light);
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--secondary-color);
+            border-radius: 15px;
             transition: all 0.3s ease;
         }
 
-        .contact-card:hover {
+        .contact-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .contact-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
-            border-radius: 16px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: white;
-            flex-shrink: 0;
         }
 
         /* Map */
-        .map-container {
+        #map {
             height: 400px;
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             margin-top: 2rem;
         }
 
@@ -468,74 +377,111 @@
         .modal {
             display: none;
             position: fixed;
-            top: 0;
+            z-index: 2000;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
-            background: var(--secondary-bg);
-            padding: 3rem;
-            border-radius: 25px;
+            background: var(--secondary-color);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
             max-width: 500px;
-            width: 100%;
             text-align: center;
             transform: scale(0.8);
             transition: all 0.3s ease;
-            border: 1px solid var(--border-light);
         }
 
         .modal.active .modal-content {
+            display: block;
             transform: scale(1);
         }
 
-        .close-modal {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+        .close {
+            color: var(--text-muted);
+            float: right;
             font-size: 2rem;
-            color: var(--text-secondary);
+            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .close-modal:hover {
-            color: var(--text-primary);
+        .close:hover {
+            color: var(--text-light);
         }
 
         /* Footer */
         .footer {
-            background: var(--primary-bg);
-            padding: 4rem 0 2rem;
-            border-top: 1px solid var(--border-light);
+            background: var(--primary-color);
+            padding: 3rem 0 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-light);
-            color: var(--text-secondary);
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fab {
+                bottom: 1rem;
+            }
+
+            .fab-call {
+                bottom: 8rem;
+            }
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -543,41 +489,101 @@
             }
         }
 
-        .animate {
-            opacity: 0;
-            transform: translateY(40px);
+        .fade-in-up {
             animation: fadeInUp 0.8s ease forwards;
         }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">HAYAT ENGINEERS</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#appointment">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Complete HVAC Solutions</h1>
+            <p>HAYAT ENGINEERS - Your trusted partner for HVAC installation, maintenance, AHU erection, VRF/VRV systems, ducting & piping across India. Professional service guaranteed.</p>
+            <div class="cta-buttons">
+                <a href="#appointment" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <i class="fas fa-cogs"></i> View Services
+                </a>
+            </div>
+        </div>
+    </section>
 
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--primary-bg);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 2rem;
-                transition: left 0.3s ease;
-            }
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="container">
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">500+</span>
+                    <h3>Projects Completed</h3>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <h3>Years Experience</h3>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <h3>Customer Satisfaction</h3>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <h3>Emergency Service</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu li {
-                margin: 1rem 0;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-           
+    <!-- Services Overview -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our HVAC Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>HVAC Installation</h3>
+                    <p>Complete HVAC system installation for residential, commercial & industrial projects across India.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>HVAC Maintenance</h3>
+                    <p>Regular maintenance contracts to ensure optimal performance and longevity of your HVAC systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>AHU Erection</h3>
+                    <p>Professional Air Handling Unit erection and commissioning services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3>VRF/VRV Systems</h3>
+                    <p>Advanced VRF/VRV system installation by certified VRF HVAC experts.</p>
+                </
